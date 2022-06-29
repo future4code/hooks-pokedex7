@@ -1,9 +1,10 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Paulo Luiz Silva dos Santos Junior
+- Leandro Pereira de Jesus
+- Vinicius Andre Ribeiro Marinho
+
 
 Link do Surge: www.link.com.br
 
