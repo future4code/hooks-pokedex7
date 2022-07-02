@@ -7,7 +7,7 @@ const Pagination = (props) =>{
     return(
         <PaginationContainer>
             <button onClick={onLeftClick}><div>◀</div></button>
-            <div>1{page}de{totalPages}</div>
+            <div>{page}de{totalPages}</div>
             <button onClick={onRightClick}><div>▶</div></button>
         </PaginationContainer>
     )
