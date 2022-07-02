@@ -23,7 +23,7 @@ const Pokedex = (props) => {
       <PokedexHeader>
         <h1>Pokedex</h1>
         <Pagination
-          pages={page+1}
+          page={page+1}
           totalPages={totalPages}
           onLeftClick={onLeftClickHandler}
           onRightClick={onRightClickHandler}
