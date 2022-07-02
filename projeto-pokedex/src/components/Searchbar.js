@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {SearchBarContainer, SearchBar, SearchBarInput, SearchBarBtn} from './styles/Styles'
 
 const Searchbar = (props) => {
   const [search, setSearch] = useState("dito");
@@ -15,14 +16,14 @@ const Searchbar = (props) => {
   };
 
   return (
-    <div className="searchbar-container">
-      <div className="searchbar">
-        <input placeholder="buscar pokemon" onChange={onChangeHandler} /> 
-      </div>
-      <div className="searchbar-btn">
+    <SearchBarContainer>
+      <SearchBar>
+        <SearchBarInput placeholder="buscar pokemon" onChange={onChangeHandler} /> 
+      </SearchBar>
+      <SearchBarBtn>
         <button onClick={onButtonClickHandler}>Buscar</button>
-      </div>
-    </div>
+      </SearchBarBtn>
+    </SearchBarContainer>
   );
 };
 

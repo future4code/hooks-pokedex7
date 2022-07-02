@@ -1,14 +1,15 @@
 import React from 'react';
+import {PaginationContainer} from './styles/Styles'
 
 const Pagination = (props) =>{
     const {page, totalPages, onLeftClick, onRightClick} =props
 
     return(
-        <div className="pagination-container">
+        <PaginationContainer>
             <button onClick={onLeftClick}><div>◀</div></button>
             <div>1{page}de{totalPages}</div>
             <button onClick={onRightClick}><div>▶</div></button>
-        </div>
+        </PaginationContainer>
     )
 }
 export default Pagination

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getPokemonData, getPokemons, searchPokemon } from "./api";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Pokedex from "./components/Pokedex";
 import { FavoriteProvider } from "./contexts/favoritesContext";
+import {NotFoundText} from '../src/components/styles/Styles'
 
 const favoritesKey = "f";
 export default function App() {
@@ -88,7 +88,7 @@ export default function App() {
         <Navbar />
         <Searchbar onSearch={onSearchHandler} />
         {notFound ? (
-          <div className="not-found-text" >Errou!</div>
+          <NotFoundText>Errou!</NotFoundText>
         ):
         (<Pokedex
           pokemons={pokemons}
