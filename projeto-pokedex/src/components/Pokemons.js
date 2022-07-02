@@ -1,28 +1,40 @@
-import React from "react";
+import React, {useContext} from "react";
+import FavoriteContext from "../contexts/favoritesContext";
+import {
+  PokemonCard, 
+  PokemonImageContainer, 
+  PokemonImage, 
+  CardBody, 
+  CardTop,
+  CardTopH3,
+  CardBottom,
+  PokemonType,
+  PokemonHeartBtn
+}from './styles/Styles'
 
 const Pokemon = (props) => {
+  const {favoritesPokemons, updateFavoritePokemons} = useContext(FavoriteContext)
   const { pokemon } = props;
   const onHeartClick = () => {
-    console.log("pode favoritar")
+    updateFavoritePokemons(pokemon.name)
   }
 
-  const heart = "❤️"
+  const heart =favoritesPokemons.includes(pokemon.name) ? "❤️" : ' 🖤';
   return (
-    <div className="pokemon-card">
-      <div className="pokemon-image-container">
-        <img
+    <PokemonCard>
+      <PokemonImageContainer>
+        <PokemonImage
           alt={pokemon.name}
           src={pokemon.sprites.front_default}
-          className="pokemon-image"
         />
-      </div>
-      <div className="card-body">
-        <div className="card-top">
-          <h3>{pokemon.name}</h3>
+      </PokemonImageContainer>
+      <CardBody>
+        <CardTop>
+          <CardTopH3>{pokemon.name}</CardTopH3>
           <div>#{pokemon.id}</div>
-        </div>
-        <div className="card-bottom">
-          <div className="pokemon-type">
+        </CardTop>
+        <CardBottom>
+          <PokemonType>
             {pokemon.types.map((type, index) => {
               return (
                 <div key={index} classNamepokemon-type-text>
@@ -30,13 +42,13 @@ const Pokemon = (props) => {
                 </div>
               );
             })}
-          </div>
-          <button className="pokemon-heart-btn" onClick={onHeartClick}>
+          </PokemonType>
+          <PokemonHeartBtn onClick={onHeartClick}>
             {heart}
-          </button>
-        </div>
-      </div>
-    </div>
+          </PokemonHeartBtn>
+        </CardBottom>
+      </CardBody>
+    </PokemonCard>
   );
 };
 export default Pokemon;
