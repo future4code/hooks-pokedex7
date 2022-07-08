@@ -20,12 +20,13 @@ export const HeaderContainer = styled.div `
 
 export const ImgHeader = styled.img `
   width: 300px;
-  height: 100px;
+  height: 150px;
 `;
 
 export const PokeBolaHeader = styled.img `
   width: 100px;
   height: 100px;
+  margin-top: 20%;
 `;
 
 export const HomeContainerGrid = styled.div `
