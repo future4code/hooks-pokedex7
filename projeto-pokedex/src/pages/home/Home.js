@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import GlobalStateContext from "./../../globalState/GlobalStateContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { ButtonPokemonCard, ImgPokeCard, HomeContainerGrid, ImgHeader, HomeGlobalContainer, PokemonCard , PokeNameCard, DivButton, ContainerCard, HeaderContainer, PokeBolaHeader} from "../../styles/styles";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,9 +26,9 @@ const Home = () => {
       const newListPoke = [...pokedex, newPoke];
 
       setPokedex(newListPoke);
-      alert("deu certo");
+      alert("Added Pokemon!");
     } else {
-      alert("deu errado");
+      alert("This pokemon is already in the pokedex!");
     }
   };
 
@@ -36,29 +37,49 @@ const Home = () => {
   }
 
   const renderPokemons =
-    pokemon &&
     pokemon.map((poke) => {
       return (
-        <div key={poke.id}>
-          <p>{poke.name}</p>
-          <img src={poke.sprites.front_default} alt="Pokemon" />
-          <button onClick={() =>seeDetails(poke.name)}>See Details</button>
-          <button
+        <PokemonCard>
+          <div key={poke.id}>
+
+            <ContainerCard>
+            <PokeNameCard>
+          <h2>{poke.name.toUpperCase()}</h2>
+            </PokeNameCard>
+          
+          <ImgPokeCard src={poke.sprites.front_default} alt="Pokemon" />
+          </ContainerCard>
+
+          <DivButton>
+          <ButtonPokemonCard onClick={() =>seeDetails(poke.name)}>See Details</ButtonPokemonCard>
+          <ButtonPokemonCard
             onClick={() =>
               addPokemons(poke.id, poke.sprites.front_default, poke.name)
             }
           >
             Add Pokedex
-          </button>
-        </div>
+          </ButtonPokemonCard>
+          </DivButton>
+          </div>
+          </PokemonCard>
       );
     });
 
+
   return (
     <div>
-      <h1>List Pokemon Test</h1>
-      <button onClick={() => navigate("/pokedex")}>pokedex</button>
+      <HomeGlobalContainer>
+        <HeaderContainer>
+      <ImgHeader src="https://pokedex.sleduardo.dev/img/logo.svg"/>
+      {/* <button onClick={() => navigate("/pokedex")}>pokedex</button> */}
+      <Link to="/pokedex"><PokeBolaHeader src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pokebola-Pok%C3%A9mon-PNG.png" /></Link>
+       </HeaderContainer>
+      <HomeContainerGrid>
+        
       {renderPokemons}
+          
+      </HomeContainerGrid>
+      </HomeGlobalContainer>
     </div>
   );
 };
