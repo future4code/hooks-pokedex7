@@ -71,7 +71,6 @@ const Home = () => {
       <HomeGlobalContainer>
         <HeaderContainer>
       <ImgHeader src="https://pokedex.sleduardo.dev/img/logo.svg"/>
-      {/* <button onClick={() => navigate("/pokedex")}>pokedex</button> */}
       <Link to="/pokedex"><PokeBolaHeader src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pokebola-Pok%C3%A9mon-PNG.png" /></Link>
        </HeaderContainer>
       <HomeContainerGrid>
