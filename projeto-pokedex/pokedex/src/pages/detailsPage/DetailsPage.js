@@ -16,6 +16,7 @@ const DetailsPage = () => {
     axios
       .get(`${BASE_URL}/pokemon/${name}`)
       .then((response) => {
+        console.log(response)
         setPokemonDetails(response.data);
       })
       .catch((error) => {});
@@ -62,6 +63,7 @@ const DetailsPage = () => {
   return (
     <div>
       <h1>Pokemon Details</h1>
+      {/* <img src={ pokemonDetails && pokemonDetails.sprites.front_default && pokemonDetails.sprites.front_default} /> */}
       <button onClick={() => removePokemonStorage("/")}>Home</button>
       <button onClick={() => removePokemonStorage("/pokedex")}>Pokedex</button>
       <h2>Status</h2>
