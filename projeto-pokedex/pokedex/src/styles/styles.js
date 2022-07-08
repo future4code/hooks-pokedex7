@@ -7,16 +7,24 @@ export const HomeGlobalContainer = styled.div `
     height: 100vh;
 `;
 
+// ==========Header ==========
+
 export const HeaderContainer = styled.div `
   display: flex;
-
   flex-direction: row;
+  background-color: red;
   justify-content: space-between;
-  margin-left: 650px;
+  width: 98vw;
+  height: 300px;
 `;
 
 export const ImgHeader = styled.img `
   width: 300px;
+  height: 100px;
+`;
+
+export const PokeBolaHeader = styled.img `
+  width: 100px;
   height: 100px;
 `;
 

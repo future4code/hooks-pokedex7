@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import GlobalStateContext from "./../../globalState/GlobalStateContext";
-import { useNavigate } from "react-router-dom";
-import { ButtonPokemonCard, ImgPokeCard, HomeContainerGrid, ImgHeader, HomeGlobalContainer, PokemonCard , PokeNameCard, DivButton, ContainerCard, HeaderContainer} from "../../styles/styles";
+import { useNavigate, Link } from "react-router-dom";
+import { ButtonPokemonCard, ImgPokeCard, HomeContainerGrid, ImgHeader, HomeGlobalContainer, PokemonCard , PokeNameCard, DivButton, ContainerCard, HeaderContainer, PokeBolaHeader} from "../../styles/styles";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -71,7 +71,8 @@ const Home = () => {
       <HomeGlobalContainer>
         <HeaderContainer>
       <ImgHeader src="https://pokedex.sleduardo.dev/img/logo.svg"/>
-      <button onClick={() => navigate("/pokedex")}>pokedex</button>
+      {/* <button onClick={() => navigate("/pokedex")}>pokedex</button> */}
+      <Link to="/pokedex"><PokeBolaHeader src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Pokebola-Pok%C3%A9mon-PNG.png" /></Link>
        </HeaderContainer>
       <HomeContainerGrid>
         
