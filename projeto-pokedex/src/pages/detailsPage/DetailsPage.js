@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../components/constants/BASE_URL";
 
@@ -16,7 +17,7 @@ const DetailsPage = () => {
     axios
       .get(`${BASE_URL}/pokemon/${name}`)
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         setPokemonDetails(response.data);
       })
       .catch((error) => {});
@@ -64,14 +65,17 @@ const DetailsPage = () => {
     <div>
       <h1>Pokemon Details</h1>
       {/* <img src={ pokemonDetails && pokemonDetails.sprites.front_default && pokemonDetails.sprites.front_default} /> */}
+      
       <button onClick={() => removePokemonStorage("/")}>Home</button>
       <button onClick={() => removePokemonStorage("/pokedex")}>Pokedex</button>
+      
       <h2>Status</h2>
       {renderPokemonStats}
       <h2>Types</h2>
       {renderPokemonType}
       <h2>Moves</h2>
       {renderPokemonMoves}
+     
     </div>
   );
 };
