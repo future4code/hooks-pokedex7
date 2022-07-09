@@ -80,4 +80,34 @@ export const DivButton = styled.div `
 
 `;
 
+// ==========Details page
 
+// export const DetailsContainer = styled.div `
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+// `;
+
+
+//============== Pokedex===============
+
+export const ContainerGlobalPokedex = styled.div `
+ display: flex;
+    flex-direction: column;
+    width: 98vw;
+    height: 100vh;
+
+`;
+
+export const GridContainerPokedex = styled.div `
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+`;
+
+export const CardPokedex = styled.div `
+  border: 1px solid purple;
+`;
+
+export const SubContainerGlobalPokedex = styled.div `
+  margin-left: 55px;
+`;
